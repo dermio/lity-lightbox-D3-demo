@@ -50,7 +50,12 @@ $(document).on("lity:ready", function (event, instance) {
     return chartData;
 
   }
-  findStressorById(objId);
+  /* Save chart data to variable. Use as argument to call D3 chart
+  functions. */
+  let d3ChartArg = findStressorById(objId);
+
+  drawChart(d3ChartArg);
+  resizeChart(d3ChartArg);
 
   /* Write a function that accepts objId as an argument. The function
   loops through STATE_DATA.data array in app.s to look for the object with
