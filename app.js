@@ -6,7 +6,27 @@ function startApp() {
 
 //$(startApp);
 
-
+// data from database stored here
+const STATE_DATA = {
+  data: [
+    {
+      activity: "nap",
+      duration: 10,
+      id: "5a12023c7a12bcb88ac5e20b",
+      postHeartRate: 60,
+      preHeartRate: 80,
+      stress: "school, final exams"
+    },
+    {
+      activity: "read",
+      duration: 10,
+      id: "5a12023c7a12bcb88ac5e20c",
+      postHeartRate: 68,
+      preHeartRate: 70,
+      stress: "fight with spouse"
+    }
+  ]
+};
 
 $(document).on("lity:ready", function (event, instance) {
   /* `opener` used as an event handler, this is set to the element
