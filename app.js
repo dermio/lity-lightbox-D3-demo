@@ -7,12 +7,30 @@ function startApp() {
 //$(startApp);
 
 
-/*
-$(document).on("lity:open", function (event, instance) {
-  console.log(event);
-  console.log("hello world");
-  //drawChart();
-})*/
+
+$(document).on("lity:ready", function (event, instance) {
+  /* `opener` used as an event handler, this is set to the element
+  which triggered the event */
+  let triggerElem = instance.opener(); // trigger is a.d3-button
+  let objId = triggerElem.closest(".js-single-result").attr("id");
+
+  console.log(objId);
+
+  /* Write a function that accepts objId as an argument. The function
+  loops through STATE_DATA.data array in app.s to look for the object with
+  the correct stressor.id and associated heart rates. The function
+  returns an on array of objects:
+
+  let stressArr = [
+    {typeHR: "preHeartRate", heartRate: 80},
+    {typeHR: "postHeartRate", heartRate: 70}
+  ];
+
+  Next call the functions drawChart() with the stressArr object
+  to draw the D3 chart
+  */
+
+})
 
 
 
