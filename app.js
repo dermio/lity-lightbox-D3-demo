@@ -36,6 +36,22 @@ $(document).on("lity:ready", function (event, instance) {
 
   console.log(objId);
 
+  function findStressorById(stressorId) {
+    let stressor = STATE_DATA.data.find(function (element) {
+      return element.id === stressorId;
+    });
+    console.log(stressor);
+
+    let chartData = [
+      {typeHR: "preHeartRate", heartRate: stressor.preHeartRate},
+      {typeHR: "postHeartRate", heartRate: stressor.postHeartRate}
+    ];
+    console.log(chartData);
+    return chartData;
+
+  }
+  findStressorById(objId);
+
   /* Write a function that accepts objId as an argument. The function
   loops through STATE_DATA.data array in app.s to look for the object with
   the correct stressor.id and associated heart rates. The function
