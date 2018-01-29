@@ -73,12 +73,17 @@ $(document).on("lity:ready", function (event, instance) {
 
 })
 
-/* Need event handler for `lity:close` or `lity:remove`. The D3 chart
-is displayed a secod time at the botto of the page when the lightbox
+/* Need event handler for `lity:close` or `lity:remove`. A new <svg>
+with a D3 chart is appended at the bottom of the page each time the lightbox
 is opened, closed, then opened again. */
 $(document).on("lity:close", function (event, instance) {
   console.log("Lity lightbox closed");
 
+  /* Lity appends a new <div> to the bottom of the DOM to handle the
+  lightbox behavior. Target the <div> with the classes `.lity.lity-opened`.
+  From that <div> travese down the DOM to div.chart-container. Use
+  jQuery's .empty() method to remove all child <svg> elements.
+  */
   let it = $(".lity.lity-opened").find(".chart-container").children().length;
   console.log(it);
 
