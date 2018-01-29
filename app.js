@@ -78,6 +78,12 @@ is displayed a secod time at the botto of the page when the lightbox
 is opened, closed, then opened again. */
 $(document).on("lity:close", function (event, instance) {
   console.log("Lity lightbox closed");
+
+  let it = $(".lity.lity-opened").find(".chart-container").children().length;
+  console.log(it);
+
+  $(".lity.lity-opened").find(".chart-container").empty();
+
 })
 
 
