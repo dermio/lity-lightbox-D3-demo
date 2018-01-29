@@ -73,6 +73,12 @@ $(document).on("lity:ready", function (event, instance) {
 
 })
 
+/* Need event handler for `lity:close` or `lity:remove`. The D3 chart
+is displayed a secod time at the botto of the page when the lightbox
+is opened, closed, then opened again. */
+$(document).on("lity:close", function (event, instance) {
+  console.log("Lity lightbox closed");
+})
 
 
 /*
